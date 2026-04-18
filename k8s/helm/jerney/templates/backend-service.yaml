@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jerney-backend-svc
+  namespace: jerney
+  labels:
+    app: backend   # 👈 used by ServiceMonitor
+spec:
+  selector:
+    app: backend
+
+  ports:
+    - name: http   # 🔥 MUST be named
+      port: 5000
+      targetPort: 5000

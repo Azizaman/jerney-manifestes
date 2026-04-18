@@ -2,7 +2,9 @@ node_modules/
 dist/
 .env
 *.log
-
+backend/
+frontend/
+.github/
 # Terraform
 terraform/.terraform/
 terraform/*.tfstate

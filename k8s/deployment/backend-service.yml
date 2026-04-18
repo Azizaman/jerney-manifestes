@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jerney-backend-svc
+  namespace: backend
+  labels:
+    type: backend
+
+  annotations:
+    prometheus.io/path: /api/health   # 👈 updated
+    prometheus.io/scrape: "true"
+
+spec:
+  type: ClusterIP   # 👈 internal service
+
+  ports:
+    - name: http
+      port: 5000        # 👈 service port
+      targetPort: 5000  # 👈 must match your Express app
+
+  selector:
+    type: backend

@@ -1,0 +1,23 @@
+frontend:
+  image: azizaman/jerney-frontend:4.0.0
+  replicas: 2
+  port: 80
+
+backend:
+  image: azizaman/jerney-backend:3.0.0
+  replicas: 2
+  port: 5000
+
+postgres:
+  image: postgres:15
+  storage: 5Gi
+
+ingress:
+  enabled: true
+  host: localhost
+
+monitoring:
+  enabled: true
+  namespace: monitoring
+  releaseLabel: monitoring
+  path: /metrics
