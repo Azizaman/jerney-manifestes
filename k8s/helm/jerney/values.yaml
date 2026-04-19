@@ -5,7 +5,7 @@ frontend:
   tag: a0fd439-1776606386
 backend:
   image: azizaman/jerney-backend:3.0.0
-  replicas: 3
+  replicas: 2
   port: 5000
   tag: a0fd439-1776606386
 postgres:
